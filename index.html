@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookpal</title>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ----------nav----------- -->
+    <nav>
+        <img src="Assets/cookpal-1.png" alt="logo">
+        <div class="nav-link">
+           <div> <img src="Assets/cookpal-1.png" id="lgo" alt=""></div>
+            <ul>
+                <li>Home</li>
+                <li>Explore</li>
+                <li>Help</li>
+            </ul>
+            <img src="Assets/profile-img.png"  alt="profile">
+        </div>
+        <i class='bx bx-menu' id="menu-bar" onclick="myMenu()"></i>
+
+    </nav>
+    <!-- ----------hero-section----------- -->
+    <section class="hero-section">
+       <div class="hero-text-container">
+        <h3>Trending now</h3>
+        <h1>Mike's famous salad <br> with cheese</h1>
+        <p>by John Mike</p>
+       </div>
+    </section>
+   <h2>Search For Recipes</h2>
+
+   <div class="search-box">
+    <i class='bx bx-search' ></i>
+    <form action="">
+    <input type="text" name="search" id="search-item" placeholder="Search for Recipes" onkeyup="searchFood()">
+    <label class='bx bx-search' for="search"></label>
+    </form>
+   </div>
+   <div class="category-container">
+        <div class="recipes-info" style="background-color: #eaaa00;" onclick="openfood('all-food')" >
+            <p>All Recipes</p>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+        <!-- onclick="openfood('veg')" -->
+        <div class="recipes-info"  style="background-color: #c4d600;"  onclick="openfood('veg')" >
+            <p>Veg Recipes Only</p>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+        <div class="recipes-info"  style="background-color: #dc582a;"  onclick="openfood('non-vg')">
+            <p>Non Veg Recipes</p>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+   </div>
+
+   <!-- -----------recipes-section----------- -->
+
+   <section class="recipes-section">
+    <div class="filter">
+        <h2>Filters</h2>
+        <h3>Rating</h3>
+        <div id="rate-check">
+            <input type="checkbox" id="rate-1">
+            <label for="rate-1">4 and Above</label>
+            <br>
+            <input type="checkbox" id="rate-2" >
+            <label for="rate-2">Below 4</label>
+        </div>
+    </div>
+
+ <div class="food-main-container">
+
+    <!-- ---------all-category---------- -->
+
+   <div class="food-show active-tab" id="all-food"">
+
+    <div class="food-container" id="pro-list">
+        <div class="food-card ">
+            <img src="Assets/salaad-food.png" alt="salad">
+            <p >Veg</p>
+            <div class="card-heading">
+                <h2>Salad</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="Assets/non-veg-1.jpg" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Fish Butter</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="food-card">
+            <img src="Assets/mutton-1.jpg" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Mutton Curry</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="food-card">
+            <img src="Assets/salaad-food.png" alt="salad">
+            <p >Veg</p>
+            <div class="card-heading">
+                <h2>Russian Salad</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="food-card">
+            <img src="Assets/pulao.jpg" alt="salad">
+            <p >Veg</p>
+            <div class="card-heading">
+                <h2>Pulao Rice</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="food-card">
+            <img src="Assets/burger.jpg" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Veg Burger</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+        <div class="food-card">
+            <img src="Assets/food-3.png" alt="salad">
+            <p >Veg</p>
+            <div class="card-heading">
+                <h2>Stir fry recipe</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="Assets/food-4.png" alt="salad">
+            <p >Veg</p>
+            <div class="card-heading">
+                <h2>Pakora Recipe</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="Assets/meat fry.jpg" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Meat Fry</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="Assets/food-3.png" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Sauce Recipes</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="Assets/non-veg-2.jpg" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Rogan Josh Recipe</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="Assets/food-5.png" alt="salad">
+            <p >Non Veg</p>
+            <div class="card-heading">
+                <h2>Apollo Fish</h2>
+                <p><i class='bx bxs-star'></i> 4.5</p>
+            </div>
+            <div class="time-container">
+                <h3>40 min</h3>
+                <div>
+                    <i class='bx bx-heart'></i>
+                    <i class='bx bx-message-rounded'></i>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+   </div> 
+
+   <!-- ---------veg---------- -->
+
+    <div class="food-show" id="veg">
+        <div class="food-container-1">
+            <div class="food-card">
+                <img src="Assets/salaad-food.png" alt="salad">
+                <p >Veg</p>
+                <div class="card-heading">
+                    <h2>Russian Salad</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/pulao.jpg" alt="salad">
+                <p >Veg</p>
+                <div class="card-heading">
+                    <h2>Pulao Rice</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/burger.jpg" alt="salad">
+                <p >Non Veg</p>
+                <div class="card-heading">
+                    <h2>Veg Burger</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/veg kuruma.jpg" alt="salad">
+                <p >Veg</p>
+                <div class="card-heading">
+                    <h2>Veg kuruma</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/food-5.png" alt="salad">
+                <p >Veg</p>
+                <div class="card-heading">
+                    <h2>Jalfrezi Recipes</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- ---------non-veg------    -->
+     <div class="food-show " id="non-vg">
+        <div class="food-container-1">
+            <div class="food-card">
+                <img src="Assets/meat fry.jpg" alt="salad">
+                <p >Non Veg</p>
+                <div class="card-heading">
+                    <h2>Meat Fry</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/mutton-1.jpg" alt="salad">
+                <p >Non Veg</p>
+                <div class="card-heading">
+                    <h2>Mutton Curry</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/non-veg-1.jpg" alt="salad">
+                <p >Non Veg</p>
+                <div class="card-heading">
+                    <h2>Fish Butter</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/non-veg-2.jpg" alt="salad">
+                <p >Non Veg</p>
+                <div class="card-heading">
+                    <h2>Rogan Josh Recipe</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="Assets/food-5.png" alt="salad">
+                <p >Non Veg</p>
+                <div class="card-heading">
+                    <h2>Apollo Fish</h2>
+                    <p><i class='bx bxs-star'></i> 4.5</p>
+                </div>
+                <div class="time-container">
+                    <h3>40 min</h3>
+                    <div>
+                        <i class='bx bx-heart'></i>
+                        <i class='bx bx-message-rounded'></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+
+
+  </div>
+</section>
+
+   <!-- --------------footer-section----------- -->
+
+   <section id="footer-container">
+
+    <div class="footer-text">
+        <img src="Assets/cookpal-1.png"  alt="logo">
+        <p>Cookpal is a recipe website with a wide variety of delicious recipes, easy-to-use search function. Join our community and let's cook together!</p>
+    </div>
+
+    <div class="ft-list">
+        <ul>
+            <h2>Company</h2>
+           <li>Home</li>
+           <li>Explore</li>
+           <li>Team</li>
+           <li>About Us</li>
+           <li>Activity</li>
+        </ul>
+
+        <ul>
+            <h2>Resources</h2>
+           <li>Blog</li>
+           <li>Use Cases</li>
+           <li>Testomonials</li>
+           <li>Insights</li>
+          
+        </ul>
+    </div>
+
+    <div class="ft-email-section">
+        <img src="Assets/cookpal-1.png" alt="logo">
+        <p>Ut ritus mattis interdum faucibous facilisi. Facilisi purus accumsan aliquam</p>
+        <div class="email-box-container">
+            <div>
+                <input type="email" placeholder="Your Email">
+                <i class='bx bx-at'></i>
+            </div>
+            <button>Subscribe</button>
+
+        </div>
+        <div class="ft-icon">
+            <i class='bx bxl-instagram'></i>
+            <i class='bx bxl-twitter'></i>
+            <i class='bx bxl-linkedin'></i>
+            <i class='bx bxl-facebook'></i>
+        </div>
+    </div>
+
+    </div>
+   </section>
+<script src="index.js"></script>
+</body>
+</html>
